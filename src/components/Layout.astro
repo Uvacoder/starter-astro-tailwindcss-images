@@ -1,0 +1,43 @@
+---
+const {title, contentClass} = Astro.props.content || Astro.props;
+const { pathname } = Astro.request.url
+const pages = [{
+  path: '/',
+  name: 'Home'
+},{
+  path: '/about',
+  name: 'About'
+}]
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{title}</title>
+    <link rel="stylesheet" type="text/css" href="/global.css">
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+  <header class="w-full bg-gray-800 text-white py-4 mb-4">
+    <div class="content-wrapper">
+      <div class="flex items-center justify-between">
+        <a href="/" class="font-bold mr-4">Astro-demo</a>
+        <nav>
+          {pages.map(({path, name}) => (
+            <a href={path} class={`ml-4 hover:underline font-bold ${path === pathname ? 'underline' : ''}`}>{name}</a>
+          ))}
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class={`flex-1 content-wrapper w-full mb-4 ${contentClass ? 'wp-content' : ''}`}>
+    <slot />
+  </main>
+  <footer class="w-full bg-gray-100 py-4 text-center text-sm">
+    <div class="content-wrapper">
+      <p>Footer</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

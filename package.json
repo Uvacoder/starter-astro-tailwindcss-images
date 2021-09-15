@@ -1,0 +1,29 @@
+{
+  "name": "@example/with-tailwindcss",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build",
+    "format": "prettier --write \"src/**/*.{js,md}\" \"public/global.css\" \"astro.config.mjs\" \"tailwind.config.js\""
+  },
+  "devDependencies": {
+    "astro": "^0.18.9",
+    "prettier": "^2.4.0",
+    "tailwindcss": "^2.1.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "browserslist": {
+    "production": [
+      "defaults"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

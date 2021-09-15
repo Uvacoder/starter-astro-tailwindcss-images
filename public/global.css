@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content-wrapper {
+  @apply mx-auto px-4 max-w-screen-lg;
+}
+h1,
+.h1,
+.page-title {
+  @apply text-4xl font-bold;
+}
+.wp-content h1,
+.page-title {
+  @apply mb-2;
+}
+h2,
+.h2 {
+  @apply text-xl font-bold;
+}
+h3,
+.h3 {
+  @apply text-xl font-light;
+}
+.wp-content h2,
+.wp-content h3,
+.wp-content h4 {
+  @apply mb-2;
+}
+.wp-content p,
+.wp-content ul,
+.wp-content ol,
+.wp-content img {
+  @apply mb-2;
+}
+.wp-content ul,
+.wp-content ol {
+  @apply ml-4;
+}
+.wp-content ul {
+  @apply list-disc;
+}
+.wp-content ol {
+  @apply list-decimal;
+}
+.wp-content a,
+.link-regular {
+  @apply text-blue-800 underline hover:no-underline focus:no-underline;
+}

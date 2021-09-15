@@ -1,0 +1,19 @@
+---
+import Layout from '../components/Layout.astro';
+import { Markdown } from 'astro/components';
+import Counter from '../components/Counter.jsx'
+const someProps = {
+  count: 0,
+}
+---
+<Layout title="About">
+  <h1 class="page-title">Hei verden</h1>
+  <Counter {...someProps} client:visible />
+  <div class="wp-content">
+    <Markdown>
+      ## Hello world!
+
+      The contents inside here is all in markdown.
+    </Markdown>
+  </div>
+</Layout>
