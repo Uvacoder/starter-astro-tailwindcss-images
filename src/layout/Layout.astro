@@ -1,0 +1,59 @@
+---
+import slugify from '@sindresorhus/slugify'
+import star from '@fortawesome/fontawesome-free-solid/faStar.js'
+import Icon from '../components/Icon'
+import Logo from '../components/Logo'
+const {title, description, contentClass} = Astro.props.content || Astro.props;
+let sections = Astro.fetchContent('../content/*.md').map(item => {
+  return {
+    slug: slugify(item.menuName),
+    ...item,
+  }
+});
+sections = sections.sort((a, b) => b.order - b.order);
+const menu = sections.filter(item => item.menuName).map(item => ({
+  name: item.menuName,
+  href: `/#${item.slug}`
+}))
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} /> 
+    <link rel="stylesheet" type="text/css" href="/global.css">
+</head>
+<body>
+<div class="flex flex-col min-h-screen">
+  <header class="w-full bg-gray-800 text-white py-4 mb-4">
+    <div class="content-wrapper">
+      <div class="flex items-center justify-between">
+        <a href="/#top" class="mr-4 flex items-center">
+          <Logo />
+          <strong class="ml-2">Astro</strong>
+        </a>
+        <nav class="flex items-center">
+          {menu.map(({href, name}) => (
+            <a href={href} class="ml-4 hover:underline font-bold">
+              {name}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class={`flex-1 content-wrapper w-full mb-4 ${contentClass ? 'wp-content' : ''}`}>
+    <slot />
+  </main>
+  <footer class="w-full bg-gray-100 py-4 text-center text-sm">
+    <div class="content-wrapper">
+      <p>Some other page: <a class="underline hover:no-underline mr-2" href="/about">About us</a> <a class="underline hover:no-underline" href="/markdown">Pure markdown page</a></p>
+      <Icon icon={star} />
+    </div>
+  </footer>
+</div>
+</body>
+</html>

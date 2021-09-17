@@ -1,0 +1,24 @@
+---
+const {icon: {icon}} = Astro.props;
+---
+<i class="inline-flex self-center relative align-baseline">
+  <svg
+    aria-hidden="true"
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewbox={`0 0 ${icon[0]} ${icon[1]}`}
+  >
+    <path fill="currentColor" d={icon[4]} />
+  </svg>
+</i>
+<style>
+i {
+  height: 1em;
+  width: 1em;
+}
+svg {
+  height: 1em;
+  width: 1em;
+  margin: 0 !important;
+}
+</style>

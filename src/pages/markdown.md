@@ -1,10 +1,10 @@
 ---
-title: Welcome to astro-demo
+title: A markdown page
 contentClass: true
-layout: ../components/Layout.astro
+layout: ../layout/Layout.astro
 ---
 
-# Welcome to this site
+# A markdown page
 
 It's very easy to make some words **bold** and other words _italic_ with Markdown. You can even [link to Google!](http://google.com)
 

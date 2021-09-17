@@ -1,5 +1,6 @@
 # build output
 dist
+public/images
 
 # dependencies
 node_modules/
@@ -16,3 +17,5 @@ yarn-error.log*
 
 # macOS-specific files
 .DS_Store
+
+.vercel
