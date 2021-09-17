@@ -1,13 +1,14 @@
-# Astro with Tailwind
+# Astro demo
 
-```
-npm init astro -- --template with-tailwindcss
-```
+Experiment with astro build
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+## Tasks
 
-For complete setup instructions, please see our [Styling Guide](https://docs.astro.build/guides/styling#-tailwind).
+- [x] Use tailwindcss for styling
+- [x] Fetch content with `Astro.fetchContent`
+- [x] Handle images with a modern Image component, but generate responsive sizes in a node-script before dev/build command
+- [x] Include a `fortawesome` icon
+- [x] Deploy to Vercel [astro-demo-five.vercel.app](https://astro-demo-five.vercel.app/)
+- [ ] Include and use [single page navigation](https://scrollnav.com/guide/installing.html)
 
-Todo:
-
-https://scrollnav.com/guide/installing.html
+Based on `npm init astro -- --template with-tailwindcss`
