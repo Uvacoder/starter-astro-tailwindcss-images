@@ -9,6 +9,6 @@ Experiment with astro build
 - [x] Handle images with a modern Image component, but generate responsive sizes in a node-script before dev/build command
 - [x] Include a `fortawesome` icon
 - [x] Deploy to Vercel [astro-demo-five.vercel.app](https://astro-demo-five.vercel.app/)
-- [ ] Include and use [single page navigation](https://scrollnav.com/guide/installing.html)
+- [ ] Include and use an npm-package script like [single page navigation](https://scrollnav.com/guide/installing.html)
 
 Based on `npm init astro -- --template with-tailwindcss`
